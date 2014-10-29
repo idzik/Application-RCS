@@ -1,0 +1,15 @@
+#btnProduct{
+     -fx-font-size: 25px;
+    -fx-background-image: url("product.png");
+    -fx-background-color: null;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    
+}
+#btnAuction{
+	-fx-font-size: 25px;
+    -fx-background-image: url("auction.png");
+    -fx-background-color: null;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
