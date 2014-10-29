@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controll.StartApplicationControll">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.StartApplicationControll">
   <!-- TODO Add Nodes -->
   <children>
     <SplitPane dividerPositions="0.29083094555873923" focusTraversable="true" minWidth="1100.0" orientation="VERTICAL" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
@@ -116,16 +116,16 @@
                             </HBox>
                             <VBox id="VBox" alignment="CENTER" spacing="5.0">
                               <children>
-                                <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                <HBox id="HBox" fx:id="hbDateFilterFrom" alignment="CENTER" spacing="5.0">
                                   <children>
                                     <Label text="od" />
-                                    <TextField prefWidth="90.0" />
+                                    <TextField fx:id="txtDateFilterFrom" prefWidth="90.0" />
                                   </children>
                                 </HBox>
-                                <HBox id="HBox" alignment="CENTER" spacing="5.0">
+                                <HBox id="HBox" fx:id="hbDateFilterTo" alignment="CENTER" spacing="5.0">
                                   <children>
                                     <Label text="do" />
-                                    <TextField prefWidth="90.0" />
+                                    <TextField fx:id="txtDateFilterTo" prefWidth="90.0" />
                                   </children>
                                 </HBox>
                               </children>
