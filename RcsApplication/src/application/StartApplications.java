@@ -2,16 +2,44 @@ package application;
 	
 import java.io.IOException;
 
+import calendarPicker.AddCalendar;
 import conectionDb.ConectionSql2o;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 
 
 public class StartApplications extends Application {
+	
+	@FXML
+	protected Button btnProduct;
+	@FXML
+	protected Button btnAuction;
+	@FXML
+	protected Button test;
+	@FXML
+	protected HBox hbSqlProduct;
+	@FXML
+	protected HBox hbSelectAuctionFilter;
+	@FXML
+	protected TextField txtDateFilterFrom;
+	@FXML
+	protected TextField txtDateFilterTo;
+	@FXML
+	protected HBox hbDateFilterFrom;
+	@FXML
+	protected HBox hbDateFilterTo;
+	
+	static boolean inAuction = false;
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
@@ -48,6 +76,38 @@ public class StartApplications extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	public void actionButtonProduct(){
+		btnProduct.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				hbSqlProduct.setVisible(true);
+				hbSelectAuctionFilter.setVisible(false);
+				
+			}
+		});
+	}
+	
+	public void actionButtonAuction(){
+		
+		btnAuction.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				if(!inAuction){
+				AddCalendar calendar = new AddCalendar();
+				calendar.addCalendar(txtDateFilterFrom, hbDateFilterFrom);
+				calendar.addCalendar(txtDateFilterTo, hbDateFilterTo);
+				}
+				inAuction = true;
+				hbSelectAuctionFilter.setVisible(true);
+				hbSqlProduct.setVisible(false);
+				
+			}
+		});
+	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);
